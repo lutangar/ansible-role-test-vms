@@ -1,0 +1,20 @@
+---
+- hosts: localhost
+  vars:
+    boxes:
+      - ubuntu/vivid64
+      - geerlingguy/ubuntu1404
+      - geerlingguy/ubuntu1204
+      - debian/wheezy64
+      - debian/jessie64
+      - geerlingguy/centos7
+      - geerlingguy/centos6
+      - bento/fedora-21
+      - bento/fedora-22
+      - webhippie/opensuse-13.1
+      - webhippie/opensuse-13.2
+
+  tasks:
+    - template:
+        src: Vagrantfile.j2
+        dest: "{{ playbook_dir }}/Vagrantfile"
